@@ -520,6 +520,24 @@
     }
     .site-footer p { margin: 3px 0; }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px 12px;
+      margin: 14px auto 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(219, 229, 237, 0.28);
+    }
+
+    .footer-links a {
+      color: #dbe5ed;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-links a:hover { color: #fff; }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -627,6 +645,12 @@
   <footer class="site-footer">
     <p>沖縄県立高校入試 過去問解説ライブラリ</p>
     <p>制作・運営：JUKEN CAMP 中3専門個別指導 港川教室</p>
+    <nav class="footer-links" aria-label="関連サイト">
+      <a href="https://www.juken-camp.online/minatogawa-class">港川教室</a>
+      <a href="https://okinawa-nyushi.jp/">沖縄県立高校入試ナビ</a>
+      <a href="https://okinawa-koukou.jp/">沖縄県立高校入試 学校別データブック</a>
+      <a href="https://okinawa-goukaku.jp/">沖縄県立高校入試 合格判定シミュレーター</a>
+    </nav>
     <p>&copy; <span id="year"></span> JUKEN CAMP Minatogawa Classroom</p>
   </footer>
 
