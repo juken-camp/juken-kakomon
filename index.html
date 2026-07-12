@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>沖縄県立高校入試 過去問解説ライブラリ｜JUKEN CAMP 港川教室</title>
+  <title>沖縄県立高校入試 過去問・プレ入試解説ライブラリ｜JUKEN CAMP 港川教室</title>
   <meta name="description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる生徒向け教材ライブラリです。JUKEN CAMP 中3専門個別指導 港川教室が制作しています。">
   <link rel="canonical" href="https://juken-kakomon.online/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="沖縄県立高校入試 過去問解説ライブラリ">
-  <meta property="og:title" content="沖縄県立高校入試 過去問解説ライブラリ">
+  <meta property="og:title" content="沖縄県立高校入試 過去問・プレ入試解説ライブラリ">
   <meta property="og:description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる生徒向け教材ライブラリです。">
   <meta property="og:url" content="https://juken-kakomon.online/">
 
@@ -100,6 +100,15 @@
       padding: 20px 0 18px;
     }
 
+    .header-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-copy { min-width: 0; }
+
     .header-kicker {
       margin: 0 0 1px;
       font-size: 0.86rem;
@@ -119,6 +128,20 @@
     }
 
     .site-title a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .login-link {
+      flex: 0 0 auto;
+      padding: 7px 11px;
+      color: #fff;
+      border: 1px solid #b9cad9;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .login-link:hover { background: rgba(255, 255, 255, 0.1); }
 
     .operator {
       margin: 7px 0 0;
@@ -253,6 +276,8 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .panel-heading[hidden] { display: none; }
+
     .panel-heading h2 {
       margin: 0;
       color: var(--navy-dark);
@@ -366,6 +391,7 @@
       border: 1px solid #b8d2c7;
       font-size: 0.78rem;
       font-weight: 700;
+      white-space: nowrap;
     }
     .availability.waiting { color: var(--warning); background: var(--warning-bg); border-color: #dcc88f; }
 
@@ -483,6 +509,9 @@
     @media (max-width: 560px) {
       .header-inner, .search-inner, main { width: min(calc(100% - 22px), var(--max)); }
       .header-inner { padding-block: 16px 14px; }
+      .header-row { gap: 8px; align-items: flex-start; }
+      .site-title { font-size: 1.22rem; }
+      .login-link { padding: 6px 8px; font-size: 0.75rem; }
       .search-form { grid-template-columns: minmax(0, 1fr) auto; }
       .search-form label { grid-column: 1 / -1; }
       .search-button { padding-inline: 13px; }
@@ -498,8 +527,8 @@
       .library-block + .library-block { margin-top: 18px; padding-top: 16px; }
       .tile { min-height: 72px; padding: 11px 12px; }
       .question-row { grid-template-columns: 50px minmax(0, 1fr); gap: 7px 9px; padding: 11px; }
-      .question-row .availability { grid-column: 1 / 2; }
-      .question-row .view-button { grid-column: 2 / 3; }
+      .question-row .availability { grid-column: 1 / -1; justify-self: start; }
+      .question-row .view-button { grid-column: 1 / -1; width: 100%; }
       .result-item { grid-template-columns: 1fr; }
       .result-item .plain-button { width: 100%; }
     }
@@ -514,9 +543,14 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <p class="header-kicker">沖縄県立高校入試</p>
-      <h1 class="site-title"><a href="#main-content" id="homeLink">過去問解説ライブラリ</a></h1>
-      <p class="operator">JUKEN CAMP 中3専門個別指導 港川教室</p>
+      <div class="header-row">
+        <div class="header-copy">
+          <p class="header-kicker">沖縄県立高校入試</p>
+          <h1 class="site-title"><a href="#main-content" id="homeLink">過去問解説ライブラリ</a></h1>
+          <p class="operator">JUKEN CAMP 中3専門個別指導 港川教室</p>
+        </div>
+        <a class="login-link" href="https://juken-kakomon.online/login/">生徒ログイン</a>
+      </div>
     </div>
   </header>
 
@@ -552,7 +586,7 @@
 
     <aside class="student-info" aria-labelledby="student-info-title">
       <h2 id="student-info-title">教材の利用について</h2>
-      <p>このサイトは、JUKEN CAMP 中3専門個別指導 港川教室の生徒向け教材です。現在、解説動画の視聴は教室生を対象としています。利用については港川教室までお問い合わせください。</p>
+      <p>このサイトは、港川教室の教室生用教材です。解説動画の視聴は教室生が対象です。利用については港川教室までお問い合わせください。</p>
       <a class="contact-link" href="https://www.juken-camp.online/minatogawa-class">教室へのお問い合わせ</a>
     </aside>
   </main>
@@ -663,6 +697,9 @@
     }
     function getRound() { return DATA.preRounds.find(item => item.id === state.roundId); }
     function getSubject() { return DATA.subjects.find(item => item.id === state.subjectId); }
+    function getSectionTitle(subjectId, sectionIndex) {
+      return (DATA.units[subjectId]?.[sectionIndex] || []).slice(0, 3).join("・");
+    }
     function getQuestions(subjectId, sectionIndex) {
       const names = DATA.units[subjectId]?.[sectionIndex] || ["設問内容"];
       return names.map((unit, index) => ({
@@ -772,12 +809,13 @@
       view.innerHTML = `<div class="grid">${Array.from({ length: subject.sections }, (_, index) => `
         <button class="tile section" type="button" data-section="${index}">
           <span class="tile-title">大問${index + 1}</span>
+          <span class="tile-note">${getSectionTitle(subject.id, index)}</span>
         </button>`).join("")}</div>`;
     }
 
     function renderQuestions() {
       const questions = getQuestions(state.subjectId, state.sectionIndex);
-      setHeading(`${getSubject().label}｜大問${state.sectionIndex + 1}`, "");
+      setHeading(`${getSubject().label}｜大問${state.sectionIndex + 1}`, getSectionTitle(state.subjectId, state.sectionIndex));
       view.innerHTML = `<div class="question-list">${questions.map((question, index) => `
         <article class="question-row">
           <div class="question-number">${question.number}</div>
@@ -847,7 +885,7 @@
       const query = state.searchQuery.trim().toLowerCase();
       const words = query.split(/\s+/).filter(Boolean);
       const results = allSearchItems().filter(item => {
-        const text = [getTypeLabel(item.typeId), item.year.label, item.round?.label || "", item.subject.label, `大問${item.sectionIndex + 1}`, item.question.number, item.question.unit].join(" ").toLowerCase();
+        const text = [getTypeLabel(item.typeId), item.year.label, item.round?.label || "", item.subject.label, `大問${item.sectionIndex + 1}`, getSectionTitle(item.subject.id, item.sectionIndex), item.question.number, item.question.unit].join(" ").toLowerCase();
         return words.every(word => text.includes(word));
       }).slice(0, 60);
 
