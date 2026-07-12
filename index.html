@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>沖縄県立高校入試 過去問・プレ入試解説ライブラリ｜JUKEN CAMP 港川教室</title>
   <meta name="description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる塾生向け教材ライブラリです。JUKEN CAMP 中3専門個別指導 港川教室が制作しています。">
   <link rel="canonical" href="https://juken-kakomon.online/">
@@ -63,6 +63,8 @@
     }
 
     * { box-sizing: border-box; }
+
+    html, body { touch-action: manipulation; }
 
     html { scroll-behavior: smooth; }
 
@@ -155,6 +157,7 @@
 
     .login-link {
       flex: 0 0 auto;
+      margin-left: auto;
       padding: 8px 14px;
       color: #fff;
       background: var(--blue);
@@ -694,6 +697,7 @@
       .site-title-text small { font-size: .56rem; }
       .site-title-text b { font-size: .92rem; }
       .login-link { padding: 6px 9px; font-size: 0.72rem; }
+      input, select, textarea { font-size: 16px; }
       .search-form { grid-template-columns: minmax(0, 1fr) auto; }
       .search-form label { grid-column: 1 / -1; }
       .search-button { padding-inline: 13px; }
@@ -789,7 +793,7 @@
       <a href="https://okinawa-koukou.jp/">沖縄県立高校入試 学校別データブック</a>
       <a href="https://okinawa-goukaku.jp/">沖縄県立高校入試 合格判定シミュレーター</a>
     </nav>
-    <p>&copy; <span id="year"></span>JUKEN CAMP</p>
+    <p>&copy; <span id="year"></span> JUKEN CAMP</p>
   </footer>
 
   <script>
