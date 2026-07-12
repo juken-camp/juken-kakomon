@@ -549,7 +549,7 @@
           <h1 class="site-title"><a href="#main-content" id="homeLink">過去問解説ライブラリ</a></h1>
           <p class="operator">JUKEN CAMP 中3専門個別指導 港川教室</p>
         </div>
-        <a class="login-link" href="https://juken-kakomon.online/login/">生徒ログイン</a>
+        <a class="login-link" href="https://juken-kakomon.online/login/">ログイン</a>
       </div>
     </div>
   </header>
@@ -586,7 +586,7 @@
 
     <aside class="student-info" aria-labelledby="student-info-title">
       <h2 id="student-info-title">教材の利用について</h2>
-      <p>このサイトは、港川教室の教室生用教材です。解説動画の視聴は教室生が対象です。利用については港川教室までお問い合わせください。</p>
+      <p>このサイトは、港川教室の塾生向け教材です。解説動画の視聴は塾生が対象です。利用については港川教室までお問い合わせください。</p>
       <a class="contact-link" href="https://www.juken-camp.online/minatogawa-class">教室へのお問い合わせ</a>
     </aside>
   </main>
@@ -820,7 +820,7 @@
         <article class="question-row">
           <div class="question-number">${question.number}</div>
           <div><div class="question-unit">${question.unit}</div></div>
-          <div class="availability ${question.ready ? "" : "waiting"}">${question.ready ? "教室生向け" : "解説準備中"}</div>
+          <div class="availability ${question.ready ? "" : "waiting"}">${question.ready ? "塾生向け" : "解説準備中"}</div>
           <button class="view-button" type="button" data-question="${index}" ${question.ready ? "" : "disabled"}>解説を見る</button>
         </article>`).join("")}</div>`;
     }
@@ -845,13 +845,13 @@
         <div class="video-frame">
           ${embedUrl
             ? `<iframe src="${embedUrl}" title="${escapeHtml(question.number + " " + question.unit)}の解説動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-            : `<div class="video-placeholder"><div><strong>解説動画</strong><small>この動画は教室生向け教材です</small></div></div>`}
+            : `<div class="video-placeholder"><div><strong>解説動画</strong><small>この動画は塾生向け教材です</small></div></div>`}
         </div>
         <dl class="video-facts">
           <div><dt>問題の概要</dt><dd>${question.summary}</dd></div>
           <div><dt>この問題のポイント</dt><dd>${question.point}</dd></div>
           <div><dt>よくある間違い</dt><dd>${question.mistake}</dd></div>
-          <div><dt>解説動画の公開状況</dt><dd>${question.ready ? "教室生向け" : "解説準備中"}</dd></div>
+          <div><dt>解説動画の公開状況</dt><dd>${question.ready ? "塾生向け" : "解説準備中"}</dd></div>
         </dl>
       </div>`;
     }
@@ -899,7 +899,7 @@
           <article class="result-item">
             <div>
               <p class="result-path">${getTypeLabel(item.typeId)} &gt; ${item.year.label}${item.round ? ` &gt; ${item.round.label}` : ""} &gt; ${item.subject.label} &gt; 大問${item.sectionIndex + 1} &gt; ${item.question.number}</p>
-              <p class="result-detail">${item.question.unit}／${item.question.ready ? "教室生向け" : "解説準備中"}</p>
+              <p class="result-detail">${item.question.unit}／${item.question.ready ? "塾生向け" : "解説準備中"}</p>
             </div>
             <button class="plain-button" type="button" data-result="${index}">教材を開く</button>
           </article>`).join("")}</div>`;
