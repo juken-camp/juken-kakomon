@@ -1,113 +1,945 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FPDNMB3CC0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FPDNMB3CC0');
-</script>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>沖縄県立高校入試 過去問解説ライブラリ｜JUKEN CAMP港川教室</title>
-  <meta name="description" content="沖縄県立高校入試の過去問解説動画とプレ入試解説動画を、年度・教科・大問・設問から探せるライブラリ。JUKEN CAMP 中3専門個別指導 港川教室（浦添市港川）が制作・運営しています。">
-  
+  <title>沖縄県立高校入試 過去問解説ライブラリ｜JUKEN CAMP 港川教室</title>
+  <meta name="description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる生徒向け教材ライブラリです。JUKEN CAMP 中3専門個別指導 港川教室が制作しています。">
   <link rel="canonical" href="https://juken-kakomon.online/">
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="沖縄県立高校入試 過去問解説ライブラリ｜JUKEN CAMP港川教室">
-  <meta property="og:description" content="沖縄県立高校入試の過去問解説動画とプレ入試解説動画を、年度・教科・大問・設問から探せるライブラリ。JUKEN CAMP 中3専門個別指導 港川教室（浦添市港川）が制作・運営しています。">
-  <meta property="og:url" content="https://juken-kakomon.online/">
-  <meta property="og:image" content="https://juken-kakomon.online/assets/img/ogp.png">
+  <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="沖縄県立高校入試 過去問解説ライブラリ">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"沖縄県立高校入試 過去問解説ライブラリ","url":"https://juken-kakomon.online/"}</script>
-  <script>window.SITE={"root":"./","gaId":"","auth":{"provider":"none","supabaseUrl":"","supabaseAnonKey":""}};</script>
+  <meta property="og:title" content="沖縄県立高校入試 過去問解説ライブラリ">
+  <meta property="og:description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる生徒向け教材ライブラリです。">
+  <meta property="og:url" content="https://juken-kakomon.online/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "沖縄県立高校入試 過去問解説ライブラリ",
+    "url": "https://juken-kakomon.online/",
+    "description": "沖縄県立高校入試の過去問・プレ入試解説を年度・教科・大問・設問別に探せる生徒向け教材サイトです。",
+    "inLanguage": "ja",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "JUKEN CAMP 中3専門個別指導 港川教室"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPDNMB3CC0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FPDNMB3CC0');
+  </script>
+
+  <style>
+    :root {
+      --navy: #17365d;
+      --navy-dark: #102b4c;
+      --blue: #285f91;
+      --blue-pale: #eef5fa;
+      --green: #2f6d59;
+      --green-pale: #edf6f1;
+      --ink: #202933;
+      --muted: #66717c;
+      --line: #cfd7de;
+      --line-dark: #aeb9c3;
+      --paper: #ffffff;
+      --ground: #f4f5f6;
+      --warning: #805d16;
+      --warning-bg: #fff7df;
+      --radius: 5px;
+      --max: 1060px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    button, input, a { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+      transform: translateY(-150%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      color: #fff;
+      background: var(--navy);
+      border-top: 6px solid var(--navy-dark);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 20px 0 18px;
+    }
+
+    .header-kicker {
+      margin: 0 0 1px;
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: clamp(1.45rem, 3.4vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+    }
+
+    .operator {
+      margin: 7px 0 0;
+      color: #e3ebf3;
+      font-size: 0.82rem;
+    }
+
+    .search-band {
+      background: #e8edf1;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .search-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 12px 0;
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .search-form label {
+      font-weight: 700;
+      color: var(--navy-dark);
+      white-space: nowrap;
+    }
+
+    .search-form input {
+      width: 100%;
+      min-height: 44px;
+      padding: 9px 12px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #8e9ca8;
+      border-radius: 3px;
+    }
+
+    .search-form input:focus,
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid #f0b429;
+      outline-offset: 2px;
+    }
+
+    .search-button, .plain-button, .view-button, .back-button {
+      min-height: 44px;
+      padding: 9px 16px;
+      border: 1px solid var(--navy);
+      border-radius: 3px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .search-button, .view-button {
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .search-button:hover, .view-button:hover { background: var(--navy-dark); }
+
+    .plain-button, .back-button {
+      color: var(--navy);
+      background: #fff;
+    }
+
+    .plain-button:hover, .back-button:hover { background: var(--blue-pale); }
+
+    main {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 22px 0 42px;
+    }
+
+    .intro {
+      margin-bottom: 18px;
+      padding: 15px 17px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+    }
+
+    .intro p { margin: 0; }
+    .intro .demo-note {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .location-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .breadcrumb {
+      min-width: 0;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+
+    .breadcrumb button {
+      padding: 2px 3px;
+      color: var(--blue);
+      background: none;
+      border: 0;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .back-button { flex: 0 0 auto; padding-inline: 13px; }
+
+    .content-panel {
+      background: var(--paper);
+      border: 1px solid var(--line-dark);
+    }
+
+    .panel-heading {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #f0f3f5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      color: var(--navy-dark);
+      font-size: 1.16rem;
+    }
+
+    .panel-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .panel-body { padding: 16px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .library-block + .library-block {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .library-block-heading {
+      margin-bottom: 10px;
+    }
+
+    .library-block-heading h3 {
+      margin: 0;
+      color: var(--navy-dark);
+      font-size: 1.05rem;
+    }
+
+    .library-block-heading p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .tile.pre { border-top-color: var(--green); }
+
+    .tile {
+      position: relative;
+      display: flex;
+      min-height: 92px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      padding: 14px;
+      color: var(--ink);
+      text-align: left;
+      background: #fff;
+      border: 1px solid var(--line-dark);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+
+    .tile:hover { background: #f7fafc; border-color: #7d91a3; }
+    .tile-title { font-size: 1rem; font-weight: 700; }
+    .tile-note { margin-top: 5px; color: var(--muted); font-size: 0.8rem; }
+    .tile.status-wait { border-top-color: #a6812f; background: #fffdf7; }
+    .tile.subject { border-top-color: var(--green); }
+    .tile.section { min-height: 75px; border-top-width: 1px; border-left: 5px solid var(--blue); }
+
+    .status-label {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 1px 7px;
+      color: var(--warning);
+      background: var(--warning-bg);
+      border: 1px solid #dcc88f;
+      border-radius: 2px;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .notice {
+      padding: 20px;
+      background: var(--warning-bg);
+      border: 1px solid #dbc77f;
+    }
+    .notice h3 { margin: 0 0 4px; color: #634a14; }
+    .notice p { margin: 0; }
+
+    .question-list, .result-list { display: grid; gap: 10px; }
+
+    .question-row {
+      display: grid;
+      grid-template-columns: 75px minmax(0, 1fr) 130px 120px;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+    }
+
+    .question-number { font-weight: 800; color: var(--navy); }
+    .question-unit { font-weight: 700; }
+    .question-meta { color: var(--muted); font-size: 0.83rem; }
+
+    .availability {
+      padding: 3px 7px;
+      text-align: center;
+      color: #245544;
+      background: var(--green-pale);
+      border: 1px solid #b8d2c7;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .availability.waiting { color: var(--warning); background: var(--warning-bg); border-color: #dcc88f; }
+
+    .view-button[disabled] {
+      color: #6e767d;
+      background: #e5e8ea;
+      border-color: #bcc4ca;
+      cursor: not-allowed;
+    }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.8fr);
+      gap: 18px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      color: #dce6ef;
+      background: #243442;
+      border: 1px solid #15212b;
+    }
+
+    .video-frame iframe { width: 100%; height: 100%; border: 0; }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .video-placeholder strong { display: block; margin-bottom: 4px; color: #fff; }
+    .video-placeholder small { color: #b9c7d3; }
+
+    .video-facts {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+    }
+    .video-facts div { border-bottom: 1px solid var(--line); }
+    .video-facts dt { padding: 7px 10px 2px; color: var(--navy); font-size: 0.78rem; font-weight: 800; }
+    .video-facts dd { margin: 0; padding: 0 10px 8px; font-size: 0.9rem; }
+
+    .search-summary { margin: 0 0 12px; color: var(--muted); }
+    .result-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+    }
+    .result-path { margin: 0; font-weight: 700; color: var(--navy-dark); }
+    .result-detail { margin: 2px 0 0; color: var(--muted); font-size: 0.84rem; }
+
+    .empty-state { padding: 26px 16px; text-align: center; color: var(--muted); }
+    .empty-state p { margin: 0 0 12px; }
+
+    .student-info {
+      margin-top: 22px;
+      padding: 16px 17px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+    .student-info h2 { margin: 0 0 7px; color: var(--navy-dark); font-size: 1rem; }
+    .student-info p { margin: 0; font-size: 0.88rem; }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      margin-top: 11px;
+      padding: 7px 13px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--navy);
+      border-radius: 3px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-link:hover { background: var(--blue-pale); }
+
+    .site-footer {
+      padding: 24px 16px;
+      color: #dbe5ed;
+      text-align: center;
+      background: var(--navy-dark);
+      border-top: 5px solid var(--blue);
+      font-size: 0.8rem;
+    }
+    .site-footer p { margin: 3px 0; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 780px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .question-row { grid-template-columns: 58px minmax(0, 1fr) 112px; }
+      .question-row .view-button { grid-column: 2 / 4; width: 100%; }
+      .video-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner, .search-inner, main { width: min(calc(100% - 22px), var(--max)); }
+      .header-inner { padding-block: 16px 14px; }
+      .search-form { grid-template-columns: minmax(0, 1fr) auto; }
+      .search-form label { grid-column: 1 / -1; }
+      .search-button { padding-inline: 13px; }
+      main { padding-top: 15px; }
+      .intro { padding: 12px 13px; }
+      .location-bar { align-items: flex-start; }
+      .breadcrumb { font-size: 0.82rem; }
+      .back-button { min-height: 40px; padding: 6px 10px; }
+      .panel-heading { display: block; padding: 11px 12px; }
+      .panel-heading p { margin-top: 2px; }
+      .panel-body { padding: 11px; }
+      .grid { grid-template-columns: 1fr; gap: 8px; }
+      .library-block + .library-block { margin-top: 18px; padding-top: 16px; }
+      .tile { min-height: 72px; padding: 11px 12px; }
+      .question-row { grid-template-columns: 50px minmax(0, 1fr); gap: 7px 9px; padding: 11px; }
+      .question-row .availability { grid-column: 1 / 2; }
+      .question-row .view-button { grid-column: 2 / 3; }
+      .result-item { grid-template-columns: 1fr; }
+      .result-item .plain-button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="./">
-      <p class="brand-operator">JUKEN CAMP <span class="brand-suffix">中3専門個別指導 港川教室の</span></p>
-      <h1 class="brand-title"><span class="t1">沖縄県立高校入試</span><span class="t2">過去問解説ライブラリ</span></h1>
-    </a>
-    <nav class="header-nav" aria-label="サイト内">
-      <a href="./login/">塾生ログイン</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <div class="wrap">
+  <a class="skip-link" href="#main-content">教材一覧へ移動</a>
 
-<section class="section" id="finder">
-  <div class="finder-tabs" role="tablist">
-    <button class="finder-tab" role="tab" aria-selected="true" aria-controls="panel-kakomon" id="tab-kakomon">過去問解説</button>
-    <button class="finder-tab" role="tab" aria-selected="false" aria-controls="panel-pre" id="tab-pre">プレ入試解説</button>
-  </div>
-  <div class="finder-panel" id="panel-kakomon" role="tabpanel" aria-labelledby="tab-kakomon">
-<div class="card matrix-scroller">
-<table class="matrix">
-  <caption style="display:none">年度と教科の一覧</caption>
-  <thead><tr><th scope="col">年度</th><th scope="col" class="subj-kokugo"><span class="subj-order">①</span><span class="subj-name">国語</span></th><th scope="col" class="subj-rika"><span class="subj-order">②</span><span class="subj-name">理科</span></th><th scope="col" class="subj-eigo"><span class="subj-order">③</span><span class="subj-name">英語</span></th><th scope="col" class="subj-shakai"><span class="subj-order">④</span><span class="subj-name">社会</span></th><th scope="col" class="subj-sugaku"><span class="subj-order">⑤</span><span class="subj-name">数学</span></th></tr></thead>
-  <tbody>
-<tr><th scope="row">令和8年度</th><td><a href="kakomon/r08/kokugo/" aria-label="令和8年度 国語">●</a></td><td><a href="kakomon/r08/rika/" aria-label="令和8年度 理科">●</a></td><td><a href="kakomon/r08/eigo/" aria-label="令和8年度 英語">●</a></td><td><a href="kakomon/r08/shakai/" aria-label="令和8年度 社会">●</a></td><td><a href="kakomon/r08/sugaku/" aria-label="令和8年度 数学">●</a></td></tr>
-<tr><th scope="row">令和7年度</th><td><a href="kakomon/r07/kokugo/" aria-label="令和7年度 国語">●</a></td><td><a href="kakomon/r07/rika/" aria-label="令和7年度 理科">●</a></td><td><a href="kakomon/r07/eigo/" aria-label="令和7年度 英語">●</a></td><td><a href="kakomon/r07/shakai/" aria-label="令和7年度 社会">●</a></td><td><a href="kakomon/r07/sugaku/" aria-label="令和7年度 数学">●</a></td></tr>
-<tr><th scope="row">令和6年度</th><td><a href="kakomon/r06/kokugo/" aria-label="令和6年度 国語">●</a></td><td><a href="kakomon/r06/rika/" aria-label="令和6年度 理科">●</a></td><td><a href="kakomon/r06/eigo/" aria-label="令和6年度 英語">●</a></td><td><a href="kakomon/r06/shakai/" aria-label="令和6年度 社会">●</a></td><td><a href="kakomon/r06/sugaku/" aria-label="令和6年度 数学">●</a></td></tr>
-<tr><th scope="row">令和5年度</th><td><a href="kakomon/r05/kokugo/" aria-label="令和5年度 国語">●</a></td><td><a href="kakomon/r05/rika/" aria-label="令和5年度 理科">●</a></td><td><a href="kakomon/r05/eigo/" aria-label="令和5年度 英語">●</a></td><td><a href="kakomon/r05/shakai/" aria-label="令和5年度 社会">●</a></td><td><a href="kakomon/r05/sugaku/" aria-label="令和5年度 数学">●</a></td></tr>
-<tr><th scope="row">令和4年度</th><td><a href="kakomon/r04/kokugo/" aria-label="令和4年度 国語">●</a></td><td><a href="kakomon/r04/rika/" aria-label="令和4年度 理科">●</a></td><td><a href="kakomon/r04/eigo/" aria-label="令和4年度 英語">●</a></td><td><a href="kakomon/r04/shakai/" aria-label="令和4年度 社会">●</a></td><td><a href="kakomon/r04/sugaku/" aria-label="令和4年度 数学">●</a></td></tr>
-<tr><th scope="row">令和3年度</th><td><a href="kakomon/r03/kokugo/" aria-label="令和3年度 国語">●</a></td><td><a href="kakomon/r03/rika/" aria-label="令和3年度 理科">●</a></td><td><a href="kakomon/r03/eigo/" aria-label="令和3年度 英語">●</a></td><td><a href="kakomon/r03/shakai/" aria-label="令和3年度 社会">●</a></td><td><a href="kakomon/r03/sugaku/" aria-label="令和3年度 数学">●</a></td></tr>
-<tr><th scope="row">令和2年度</th><td><a href="kakomon/r02/kokugo/" aria-label="令和2年度 国語">●</a></td><td><a href="kakomon/r02/rika/" aria-label="令和2年度 理科">●</a></td><td><a href="kakomon/r02/eigo/" aria-label="令和2年度 英語">●</a></td><td><a href="kakomon/r02/shakai/" aria-label="令和2年度 社会">●</a></td><td><a href="kakomon/r02/sugaku/" aria-label="令和2年度 数学">●</a></td></tr>
-  </tbody>
-</table>
-</div>
-
-<details class="card heisei-panel">
-  <summary>平成の過去問</summary>
-  <div class="matrix-scroller">
-  <table class="matrix">
-    <thead><tr><th scope="col">年度</th><th scope="col" class="subj-kokugo"><span class="subj-order">①</span><span class="subj-name">国語</span></th><th scope="col" class="subj-rika"><span class="subj-order">②</span><span class="subj-name">理科</span></th><th scope="col" class="subj-eigo"><span class="subj-order">③</span><span class="subj-name">英語</span></th><th scope="col" class="subj-shakai"><span class="subj-order">④</span><span class="subj-name">社会</span></th><th scope="col" class="subj-sugaku"><span class="subj-order">⑤</span><span class="subj-name">数学</span></th></tr></thead>
-    <tbody>
-<tr><th scope="row">平成31年度</th><td><a href="kakomon/h31/kokugo/" aria-label="平成31年度 国語">●</a></td><td><a href="kakomon/h31/rika/" aria-label="平成31年度 理科">●</a></td><td><a href="kakomon/h31/eigo/" aria-label="平成31年度 英語">●</a></td><td><a href="kakomon/h31/shakai/" aria-label="平成31年度 社会">●</a></td><td><a href="kakomon/h31/sugaku/" aria-label="平成31年度 数学">●</a></td></tr>
-<tr><th scope="row">平成30年度</th><td><a href="kakomon/h30/kokugo/" aria-label="平成30年度 国語">●</a></td><td><a href="kakomon/h30/rika/" aria-label="平成30年度 理科">●</a></td><td><a href="kakomon/h30/eigo/" aria-label="平成30年度 英語">●</a></td><td><a href="kakomon/h30/shakai/" aria-label="平成30年度 社会">●</a></td><td><a href="kakomon/h30/sugaku/" aria-label="平成30年度 数学">●</a></td></tr>
-    </tbody>
-  </table>
-  </div>
-</details>
-  </div>
-  <div class="finder-panel" id="panel-pre" role="tabpanel" aria-labelledby="tab-pre" hidden>
-<div class="card matrix-scroller">
-<table class="matrix">
-  <caption style="display:none">年度と教科の一覧</caption>
-  <thead><tr><th scope="col">年度</th><th scope="col" class="subj-kokugo"><span class="subj-order">①</span><span class="subj-name">国語</span></th><th scope="col" class="subj-rika"><span class="subj-order">②</span><span class="subj-name">理科</span></th><th scope="col" class="subj-eigo"><span class="subj-order">③</span><span class="subj-name">英語</span></th><th scope="col" class="subj-shakai"><span class="subj-order">④</span><span class="subj-name">社会</span></th><th scope="col" class="subj-sugaku"><span class="subj-order">⑤</span><span class="subj-name">数学</span></th></tr></thead>
-  <tbody>
-<tr><th scope="row">令和8年度</th><td><a href="pre/r08/kokugo/" aria-label="令和8年度 国語">●</a></td><td><a href="pre/r08/rika/" aria-label="令和8年度 理科">●</a></td><td><a href="pre/r08/eigo/" aria-label="令和8年度 英語">●</a></td><td><a href="pre/r08/shakai/" aria-label="令和8年度 社会">●</a></td><td><a href="pre/r08/sugaku/" aria-label="令和8年度 数学">●</a></td></tr>
-<tr><th scope="row">令和7年度</th><td><a href="pre/r07/kokugo/" aria-label="令和7年度 国語">●</a></td><td><a href="pre/r07/rika/" aria-label="令和7年度 理科">●</a></td><td><a href="pre/r07/eigo/" aria-label="令和7年度 英語">●</a></td><td><a href="pre/r07/shakai/" aria-label="令和7年度 社会">●</a></td><td><a href="pre/r07/sugaku/" aria-label="令和7年度 数学">●</a></td></tr>
-<tr><th scope="row">令和6年度</th><td><a href="pre/r06/kokugo/" aria-label="令和6年度 国語">●</a></td><td><a href="pre/r06/rika/" aria-label="令和6年度 理科">●</a></td><td><a href="pre/r06/eigo/" aria-label="令和6年度 英語">●</a></td><td><a href="pre/r06/shakai/" aria-label="令和6年度 社会">●</a></td><td><a href="pre/r06/sugaku/" aria-label="令和6年度 数学">●</a></td></tr>
-<tr><th scope="row">令和5年度</th><td><a href="pre/r05/kokugo/" aria-label="令和5年度 国語">●</a></td><td><a href="pre/r05/rika/" aria-label="令和5年度 理科">●</a></td><td><a href="pre/r05/eigo/" aria-label="令和5年度 英語">●</a></td><td><a href="pre/r05/shakai/" aria-label="令和5年度 社会">●</a></td><td><a href="pre/r05/sugaku/" aria-label="令和5年度 数学">●</a></td></tr>
-  </tbody>
-</table>
-</div>
-  </div>
-  <p class="section-note">教科は沖縄県立高校入試の実施順（①国語 ②理科 ③英語 ④社会 ⑤数学）で並んでいます。<a href="login/">塾生ログイン</a>をすると、その場で解説動画を視聴できます。</p>
-</section>
-  </div>
-</main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-links">
-      <a href="./">トップ</a>
-      <a href="./login/">塾生ログイン</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="header-kicker">沖縄県立高校入試</p>
+      <h1 class="site-title">過去問解説ライブラリ</h1>
+      <p class="operator">JUKEN CAMP 中3専門個別指導 港川教室</p>
     </div>
-    <p class="footer-copy">© JUKEN CAMP</p>
+  </header>
+
+  <div class="search-band">
+    <div class="search-inner">
+      <form class="search-form" id="searchForm" role="search">
+        <label for="searchInput">教材を検索</label>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="例：令和7年度 数学 正負の数" aria-describedby="searchHelp">
+        <button class="search-button" type="submit">検索</button>
+        <span class="sr-only" id="searchHelp">年度、教科、大問、設問、単元名から検索できます。</span>
+      </form>
+    </div>
   </div>
-</footer>
-<script src="./assets/js/auth.js"></script>
-<script src="./assets/js/app.js"></script>
+
+  <main id="main-content" tabindex="-1">
+    <section class="intro" aria-labelledby="intro-title">
+      <h2 class="sr-only" id="intro-title">このサイトについて</h2>
+      <p>沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・問題別に探せる生徒向け教材サイトです。</p>
+    </section>
+
+    <div class="location-bar">
+      <nav class="breadcrumb" id="breadcrumb" aria-label="現在位置"></nav>
+      <button class="back-button" id="backButton" type="button" hidden>← 戻る</button>
+    </div>
+
+    <section class="content-panel" aria-live="polite" aria-atomic="false">
+      <div class="panel-heading">
+        <h2 id="viewTitle">年度を選ぶ</h2>
+        <p id="viewHelp">見たい過去問の年度を選択してください</p>
+      </div>
+      <div class="panel-body" id="view"></div>
+    </section>
+
+    <aside class="student-info" aria-labelledby="student-info-title">
+      <h2 id="student-info-title">教材の利用について</h2>
+      <p>このサイトは、JUKEN CAMP 中3専門個別指導 港川教室の生徒向け教材です。現在、解説動画の視聴は教室生を対象としています。利用については港川教室までお問い合わせください。</p>
+      <a class="contact-link" href="#">教室へのお問い合わせ</a>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>沖縄県立高校入試 過去問解説ライブラリ</p>
+    <p>制作・運営：JUKEN CAMP 中3専門個別指導 港川教室</p>
+    <p>&copy; <span id="year"></span> JUKEN CAMP Minatogawa Classroom</p>
+  </footer>
+
+  <script>
+    // 本番データへの差し替えは、主にこの DATA 部分を編集します。
+    // 各設問の videoUrl に YouTube URL を設定すると、動画枠が自動で iframe に切り替わります。
+    const DATA = {
+      kakomonYears: [
+        { id: "r08", label: "令和8年度", ready: false, note: "解説準備中" },
+        { id: "r07", label: "令和7年度", ready: true },
+        { id: "r06", label: "令和6年度", ready: true },
+        { id: "r05", label: "令和5年度", ready: true },
+        { id: "r04", label: "令和4年度", ready: true },
+        { id: "r03", label: "令和3年度", ready: true },
+        { id: "r02", label: "令和2年度", ready: true },
+        { id: "heisei", label: "平成の過去問", ready: true, note: "年度をまとめて掲載" }
+      ],
+      preYears: [
+        { id: "r08", label: "令和8年度", ready: true },
+        { id: "r07", label: "令和7年度", ready: true },
+        { id: "r06", label: "令和6年度", ready: true },
+        { id: "r05", label: "令和5年度", ready: true }
+      ],
+      preRounds: [
+        { id: "first", label: "第1回" },
+        { id: "second", label: "第2回" },
+        { id: "third", label: "第3回" },
+        { id: "final", label: "ファイナル" }
+      ],
+      subjects: [
+        { id: "kokugo", label: "国語", sections: 5 },
+        { id: "rika", label: "理科", sections: 4 },
+        { id: "eigo", label: "英語", sections: 5 },
+        { id: "shakai", label: "社会", sections: 5 },
+        { id: "sugaku", label: "数学", sections: 6 }
+      ],
+      units: {
+        kokugo: [
+          ["漢字の読み", "漢字の書き", "語句の意味"],
+          ["説明的文章", "内容理解", "筆者の考え", "記述問題"],
+          ["文学的文章", "人物の心情", "表現の特徴"],
+          ["古文", "現代語訳", "内容理解"],
+          ["作文", "資料の読み取り"]
+        ],
+        rika: [
+          ["生物のからだ", "遺伝", "生態系"],
+          ["化学変化", "質量と濃度", "イオン"],
+          ["光と音", "電流", "運動とエネルギー"],
+          ["天気", "大地の変化", "地球と宇宙"]
+        ],
+        eigo: [
+          ["リスニング", "会話の聞き取り", "英問英答"],
+          ["語句・文法", "対話文完成", "語順整序"],
+          ["会話文読解", "内容一致", "英作文"],
+          ["長文読解", "指示語", "内容説明"],
+          ["資料読解", "条件英作文"]
+        ],
+        shakai: [
+          ["世界地理", "日本地理", "資料の読み取り"],
+          ["古代・中世", "近世", "近代"],
+          ["現代社会", "日本国憲法", "政治"],
+          ["経済", "国際社会", "時事資料"],
+          ["地理・歴史・公民の総合", "記述問題"]
+        ],
+        sugaku: [
+          ["正負の数の計算", "文字式", "平方根", "方程式"],
+          ["資料の活用", "確率", "規則性"],
+          ["関数", "グラフの読み取り", "変化の割合"],
+          ["平面図形", "作図", "図形の性質"],
+          ["空間図形", "体積・表面積", "三平方の定理"],
+          ["証明", "相似", "総合問題"]
+        ]
+      }
+    };
+
+    const state = {
+      mode: "years",
+      typeId: null,
+      yearId: null,
+      roundId: null,
+      subjectId: null,
+      sectionIndex: null,
+      questionIndex: null,
+      searchQuery: ""
+    };
+
+    const view = document.getElementById("view");
+    const viewTitle = document.getElementById("viewTitle");
+    const viewHelp = document.getElementById("viewHelp");
+    const breadcrumb = document.getElementById("breadcrumb");
+    const backButton = document.getElementById("backButton");
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+
+    function getTypeLabel(typeId = state.typeId) { return typeId === "pre" ? "プレ入試解説" : "過去問解説"; }
+    function getYear() {
+      const years = state.typeId === "pre" ? DATA.preYears : DATA.kakomonYears;
+      return years.find(item => item.id === state.yearId);
+    }
+    function getRound() { return DATA.preRounds.find(item => item.id === state.roundId); }
+    function getSubject() { return DATA.subjects.find(item => item.id === state.subjectId); }
+    function getQuestions(subjectId, sectionIndex) {
+      const names = DATA.units[subjectId]?.[sectionIndex] || ["設問内容"];
+      return names.map((unit, index) => ({
+        number: `問${index + 1}`,
+        unit,
+        ready: true,
+        videoUrl: "",
+        summary: `${unit}について答える問題です。`,
+        point: "問題文の条件を整理してから考えます。",
+        mistake: "条件の読み落としに注意します。"
+      }));
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+      })[char]);
+    }
+
+    function setHeading(title, help) {
+      viewTitle.textContent = title;
+      viewHelp.textContent = help;
+    }
+
+    function setMode(mode, additions = {}) {
+      Object.assign(state, additions, { mode });
+      render();
+      document.querySelector(".content-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function renderBreadcrumb() {
+      const parts = [{ label: "教材一覧", mode: "years" }];
+      const year = getYear();
+      const round = getRound();
+      const subject = getSubject();
+      if (state.typeId) parts.push({ label: getTypeLabel(), mode: "years" });
+      if (year) parts.push({ label: year.label, mode: state.typeId === "pre" ? "rounds" : "subjects" });
+      if (round) parts.push({ label: round.label, mode: "subjects" });
+      if (subject) parts.push({ label: subject.label, mode: "sections" });
+      if (state.sectionIndex !== null) parts.push({ label: `大問${state.sectionIndex + 1}`, mode: "questions" });
+      if (state.questionIndex !== null && state.mode === "video") parts.push({ label: `問${state.questionIndex + 1}`, mode: "video" });
+      if (state.mode === "search") parts.push({ label: "検索結果", mode: "search" });
+
+      breadcrumb.innerHTML = parts.map((part, index) => {
+        const last = index === parts.length - 1;
+        const separator = index ? '<span aria-hidden="true"> &gt; </span>' : "";
+        if (last) return `${separator}<span aria-current="page">${escapeHtml(part.label)}</span>`;
+        return `${separator}<button type="button" data-crumb="${part.mode}">${escapeHtml(part.label)}</button>`;
+      }).join("");
+      backButton.hidden = state.mode === "years";
+    }
+
+    function renderYears() {
+      setHeading("教材を選ぶ", "過去問またはプレ入試の年度を選択してください");
+      view.innerHTML = `
+        <section class="library-block" aria-labelledby="kakomon-heading">
+          <div class="library-block-heading">
+            <h3 id="kakomon-heading">過去問解説</h3>
+            <p>沖縄県立高校入試の年度別解説</p>
+          </div>
+          <div class="grid">${DATA.kakomonYears.map(year => `
+            <button class="tile ${year.ready ? "" : "status-wait"}" type="button" data-type="kakomon" data-year="${year.id}">
+              <span class="tile-title">${year.label}</span>
+              ${year.note ? `<span class="${year.ready ? "tile-note" : "status-label"}">${year.note}</span>` : '<span class="tile-note">教科を選んで進む</span>'}
+            </button>`).join("")}</div>
+        </section>
+        <section class="library-block" aria-labelledby="pre-heading">
+          <div class="library-block-heading">
+            <h3 id="pre-heading">プレ入試解説</h3>
+            <p>県統一プレ入試の年度別解説</p>
+          </div>
+          <div class="grid">${DATA.preYears.map(year => `
+            <button class="tile pre" type="button" data-type="pre" data-year="${year.id}">
+              <span class="tile-title">${year.label}</span>
+              <span class="tile-note">実施回を選んで進む</span>
+            </button>`).join("")}</div>
+        </section>`;
+    }
+
+    function renderRounds() {
+      const year = getYear();
+      setHeading(`プレ入試解説｜${year.label}`, "実施回を選択してください");
+      view.innerHTML = `<div class="grid">${DATA.preRounds.map(round => `
+        <button class="tile pre" type="button" data-round="${round.id}">
+          <span class="tile-title">${round.label}</span>
+          <span class="tile-note">教科を選んで進む</span>
+        </button>`).join("")}</div>`;
+    }
+
+    function renderSubjects() {
+      const year = getYear();
+      if (!year.ready) {
+        setHeading(year.label, "現在、解説を準備しています");
+        view.innerHTML = `<div class="notice"><h3>解説準備中</h3><p>${year.label}の解説は、公開準備が整いしだい掲載します。</p></div>`;
+        return;
+      }
+      const prefix = state.typeId === "pre" ? `${year.label} ${getRound().label}` : year.label;
+      setHeading(`${prefix}｜教科を選ぶ`, "国語・理科・英語・社会・数学の順に並んでいます");
+      view.innerHTML = `<div class="grid">${DATA.subjects.map((subject, index) => `
+        <button class="tile subject" type="button" data-subject="${subject.id}">
+          <span class="tile-note">${index + 1}時間目</span>
+          <span class="tile-title">${subject.label}</span>
+        </button>`).join("")}</div>`;
+    }
+
+    function renderSections() {
+      const subject = getSubject();
+      const context = state.typeId === "pre" ? `${getYear().label} ${getRound().label}` : getYear().label;
+      setHeading(`${context}｜${subject.label}`, "大問を選択してください");
+      view.innerHTML = `<div class="grid">${Array.from({ length: subject.sections }, (_, index) => `
+        <button class="tile section" type="button" data-section="${index}">
+          <span class="tile-title">大問${index + 1}</span>
+          <span class="tile-note">設問一覧を表示</span>
+        </button>`).join("")}</div>`;
+    }
+
+    function renderQuestions() {
+      const questions = getQuestions(state.subjectId, state.sectionIndex);
+      setHeading(`${getSubject().label}｜大問${state.sectionIndex + 1}`, "設問を選択してください");
+      view.innerHTML = `<div class="question-list">${questions.map((question, index) => `
+        <article class="question-row">
+          <div class="question-number">${question.number}</div>
+          <div><div class="question-unit">${question.unit}</div><div class="question-meta">${getSubject().label}・大問${state.sectionIndex + 1}</div></div>
+          <div class="availability ${question.ready ? "" : "waiting"}">${question.ready ? "教室生向け" : "解説準備中"}</div>
+          <button class="view-button" type="button" data-question="${index}" ${question.ready ? "" : "disabled"}>解説を見る</button>
+        </article>`).join("")}</div>`;
+    }
+
+    function youtubeEmbedUrl(url) {
+      if (!url) return "";
+      try {
+        const parsed = new URL(url);
+        let id = "";
+        if (parsed.hostname.includes("youtu.be")) id = parsed.pathname.slice(1);
+        else if (parsed.pathname.includes("/embed/")) id = parsed.pathname.split("/embed/")[1];
+        else id = parsed.searchParams.get("v") || "";
+        return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : "";
+      } catch (_) { return ""; }
+    }
+
+    function renderVideo() {
+      const question = getQuestions(state.subjectId, state.sectionIndex)[state.questionIndex];
+      const embedUrl = youtubeEmbedUrl(question.videoUrl);
+      setHeading(`${question.number}｜${question.unit}`, "解説動画と問題のポイント");
+      view.innerHTML = `<div class="video-layout">
+        <div class="video-frame">
+          ${embedUrl
+            ? `<iframe src="${embedUrl}" title="${escapeHtml(question.number + " " + question.unit)}の解説動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            : `<div class="video-placeholder"><div><strong>解説動画</strong><small>この動画は教室生向け教材です</small></div></div>`}
+        </div>
+        <dl class="video-facts">
+          <div><dt>問題の概要</dt><dd>${question.summary}</dd></div>
+          <div><dt>この問題のポイント</dt><dd>${question.point}</dd></div>
+          <div><dt>よくある間違い</dt><dd>${question.mistake}</dd></div>
+          <div><dt>解説動画の公開状況</dt><dd>${question.ready ? "教室生向け" : "解説準備中"}</dd></div>
+        </dl>
+      </div>`;
+    }
+
+    function allSearchItems() {
+      const items = [];
+      DATA.kakomonYears.filter(year => year.ready).forEach(year => {
+        DATA.subjects.forEach(subject => {
+          for (let sectionIndex = 0; sectionIndex < subject.sections; sectionIndex++) {
+            getQuestions(subject.id, sectionIndex).forEach((question, questionIndex) => {
+              items.push({ typeId: "kakomon", year, round: null, subject, sectionIndex, questionIndex, question });
+            });
+          }
+        });
+      });
+      DATA.preYears.forEach(year => {
+        DATA.preRounds.forEach(round => {
+          DATA.subjects.forEach(subject => {
+            for (let sectionIndex = 0; sectionIndex < subject.sections; sectionIndex++) {
+              getQuestions(subject.id, sectionIndex).forEach((question, questionIndex) => {
+                items.push({ typeId: "pre", year, round, subject, sectionIndex, questionIndex, question });
+              });
+            }
+          });
+        });
+      });
+      return items;
+    }
+
+    function renderSearch() {
+      const query = state.searchQuery.trim().toLowerCase();
+      const words = query.split(/\s+/).filter(Boolean);
+      const results = allSearchItems().filter(item => {
+        const text = [getTypeLabel(item.typeId), item.year.label, item.round?.label || "", item.subject.label, `大問${item.sectionIndex + 1}`, item.question.number, item.question.unit].join(" ").toLowerCase();
+        return words.every(word => text.includes(word));
+      }).slice(0, 60);
+
+      setHeading("教材の検索結果", query ? `「${state.searchQuery}」で検索` : "すべての教材を表示");
+      if (!results.length) {
+        view.innerHTML = `<div class="empty-state"><p>該当する教材が見つかりませんでした。</p><button class="plain-button" type="button" data-reset-search>年度一覧に戻る</button></div>`;
+        return;
+      }
+      view.innerHTML = `<p class="search-summary">${results.length}${results.length === 60 ? "件以上" : "件"}の教材が見つかりました。</p>
+        <div class="result-list">${results.map((item, index) => `
+          <article class="result-item">
+            <div>
+              <p class="result-path">${getTypeLabel(item.typeId)} &gt; ${item.year.label}${item.round ? ` &gt; ${item.round.label}` : ""} &gt; ${item.subject.label} &gt; 大問${item.sectionIndex + 1} &gt; ${item.question.number}</p>
+              <p class="result-detail">${item.question.unit}／${item.question.ready ? "教室生向け" : "解説準備中"}</p>
+            </div>
+            <button class="plain-button" type="button" data-result="${index}">教材を開く</button>
+          </article>`).join("")}</div>`;
+      view._searchResults = results;
+    }
+
+    function render() {
+      renderBreadcrumb();
+      if (state.mode === "years") renderYears();
+      if (state.mode === "rounds") renderRounds();
+      if (state.mode === "subjects") renderSubjects();
+      if (state.mode === "sections") renderSections();
+      if (state.mode === "questions") renderQuestions();
+      if (state.mode === "video") renderVideo();
+      if (state.mode === "search") renderSearch();
+    }
+
+    function goBack() {
+      const parent = { rounds: "years", subjects: state.typeId === "pre" ? "rounds" : "years", sections: "subjects", questions: "sections", video: "questions", search: "years" };
+      const next = parent[state.mode] || "years";
+      if (next === "years") Object.assign(state, { typeId: null, yearId: null, roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+      if (next === "rounds") Object.assign(state, { roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+      if (next === "subjects") Object.assign(state, { subjectId: null, sectionIndex: null, questionIndex: null });
+      if (next === "sections") Object.assign(state, { sectionIndex: null, questionIndex: null });
+      if (next === "questions") state.questionIndex = null;
+      state.mode = next;
+      render();
+    }
+
+    view.addEventListener("click", event => {
+      const target = event.target.closest("button");
+      if (!target) return;
+      if (target.dataset.year) {
+        const typeId = target.dataset.type;
+        setMode(typeId === "pre" ? "rounds" : "subjects", { typeId, yearId: target.dataset.year, roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+      }
+      if (target.dataset.round) setMode("subjects", { roundId: target.dataset.round, subjectId: null, sectionIndex: null, questionIndex: null });
+      if (target.dataset.subject) setMode("sections", { subjectId: target.dataset.subject, sectionIndex: null, questionIndex: null });
+      if (target.dataset.section !== undefined) setMode("questions", { sectionIndex: Number(target.dataset.section), questionIndex: null });
+      if (target.dataset.question !== undefined) setMode("video", { questionIndex: Number(target.dataset.question) });
+      if (target.dataset.result !== undefined) {
+        const item = view._searchResults[Number(target.dataset.result)];
+        setMode(item.question.ready ? "video" : "questions", {
+          typeId: item.typeId,
+          yearId: item.year.id,
+          roundId: item.round?.id || null,
+          subjectId: item.subject.id,
+          sectionIndex: item.sectionIndex,
+          questionIndex: item.question.ready ? item.questionIndex : null
+        });
+      }
+      if (target.hasAttribute("data-reset-search")) setMode("years", { typeId: null, yearId: null, roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+    });
+
+    breadcrumb.addEventListener("click", event => {
+      const target = event.target.closest("button[data-crumb]");
+      if (!target) return;
+      const mode = target.dataset.crumb;
+      if (mode === "years") Object.assign(state, { typeId: null, yearId: null, roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+      if (mode === "rounds") Object.assign(state, { roundId: null, subjectId: null, sectionIndex: null, questionIndex: null });
+      if (mode === "subjects") Object.assign(state, { subjectId: null, sectionIndex: null, questionIndex: null });
+      if (mode === "sections") Object.assign(state, { sectionIndex: null, questionIndex: null });
+      if (mode === "questions") state.questionIndex = null;
+      state.mode = mode;
+      render();
+    });
+
+    backButton.addEventListener("click", goBack);
+    searchForm.addEventListener("submit", event => {
+      event.preventDefault();
+      setMode("search", {
+        searchQuery: searchInput.value,
+        typeId: null,
+        yearId: null,
+        roundId: null,
+        subjectId: null,
+        sectionIndex: null,
+        questionIndex: null
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    render();
+  </script>
 </body>
 </html>
