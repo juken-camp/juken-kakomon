@@ -9,12 +9,31 @@
   <meta name="theme-color" content="#08a7df">
   <meta name="color-scheme" content="light">
 
+  <!-- ファビコン・PWA -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="過去問ライブラリ">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="沖縄県立高校入試 過去問解説ライブラリ">
   <meta property="og:title" content="沖縄県立高校入試 過去問・プレ入試解説ライブラリ">
   <meta property="og:description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる塾生向け教材ライブラリです。">
   <meta property="og:url" content="https://juken-kakomon.online/">
+  <meta property="og:image" content="https://juken-kakomon.online/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="沖縄県立高校入試 過去問解説ライブラリ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="沖縄県立高校入試 過去問・プレ入試解説ライブラリ">
+  <meta name="twitter:description" content="年度・教科・問題別に探せる塾生向け教材サイトです。">
+  <meta name="twitter:image" content="https://juken-kakomon.online/ogp.png">
 
   <script type="application/ld+json">
   {
@@ -1276,6 +1295,15 @@
         if (t) burst(ev.clientX, ev.clientY);
       });
     })();
+  </script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js").catch(function (error) {
+          console.warn("Service Worker registration failed:", error);
+        });
+      });
+    }
   </script>
 </body>
 </html>

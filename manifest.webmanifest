@@ -1,0 +1,36 @@
+{
+  "name": "沖縄県立高校入試 過去問解説ライブラリ",
+  "short_name": "過去問ライブラリ",
+  "description": "沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・問題別に探せる塾生向け教材サイトです。",
+  "lang": "ja",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7fbfd",
+  "theme_color": "#08a7df",
+  "categories": [
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
