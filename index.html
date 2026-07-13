@@ -6,18 +6,22 @@
   <title>沖縄県立高校入試 過去問・プレ入試解説ライブラリ｜JUKEN CAMP 港川教室</title>
   <meta name="description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる塾生向け教材ライブラリです。JUKEN CAMP 中3専門個別指導 港川教室が制作しています。">
   <link rel="canonical" href="https://juken-kakomon.online/">
-  <meta name="theme-color" content="#08a7df">
+  <meta name="theme-color" content="#0878c9">
   <meta name="color-scheme" content="light">
   <!-- ファビコン・PWA -->
   <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-TileColor" content="#0878c9">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="過去問ライブラリ">
+  <meta name="apple-mobile-web-app-title" content="過去問解説">
+  <meta name="application-name" content="過去問解説ライブラリ">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -26,6 +30,8 @@
   <meta property="og:description" content="沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・大問・設問別に探せる塾生向け教材ライブラリです。">
   <meta property="og:url" content="https://juken-kakomon.online/">
   <meta property="og:image" content="https://juken-kakomon.online/ogp.png">
+  <meta property="og:image:secure_url" content="https://juken-kakomon.online/ogp.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="沖縄県立高校入試 過去問解説ライブラリ">
@@ -765,6 +771,418 @@
       .panel-body > * { animation: none; }
     }
   </style>
+
+  <style>
+    /* ===== 2026-07 教材ポータル版デザイン =====
+       しくみサイトと見分けやすい、青・白・グレー中心の落ち着いた外観 */
+    :root {
+      --ink: #263746;
+      --muted: #667786;
+      --blue: #0878c9;
+      --blue-dark: #075b9b;
+      --blue-pale: #eef7fd;
+      --blue-soft: #d7e9f5;
+      --green: #0878c9;
+      --green-dark: #075b9b;
+      --green-pale: #eef7fd;
+      --yellow: #e9c96a;
+      --yellow-deep: #af8731;
+      --yellow-pale: #fffaf0;
+      --red: #0878c9;
+      --red-pale: #eef7fd;
+      --paper: #fff;
+      --line: #cfdbe4;
+      --line-gray: #dce3e8;
+      --max: 1160px;
+    }
+
+    body {
+      background: #fff;
+      color: var(--ink);
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    strong { background: none; }
+
+    .skip-link {
+      color: var(--blue-dark);
+      border: 1px solid var(--blue);
+      border-radius: 0;
+    }
+
+    /* ヘッダー：単色の教材ポータル型 */
+    .site-header {
+      background: #fff;
+      border-top: 2px solid #9abdda;
+      border-bottom: 0;
+    }
+
+    .header-inner {
+      min-height: 98px;
+      padding: 15px 0 13px;
+      gap: 24px;
+    }
+
+    .site-name { gap: 14px; }
+
+    .logo-tiles {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      flex: 0 0 auto;
+      display: block;
+      border: 2px solid var(--blue);
+      background: #fff;
+    }
+
+    .logo-tiles::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 7px;
+      width: 24px;
+      height: 29px;
+      border: 2px solid var(--blue);
+      border-top-width: 5px;
+      background:
+        linear-gradient(var(--blue-soft), var(--blue-soft)) 5px 8px / 13px 2px no-repeat,
+        linear-gradient(var(--blue-soft), var(--blue-soft)) 5px 14px / 13px 2px no-repeat;
+    }
+
+    .logo-tiles::after {
+      content: "▶";
+      position: absolute;
+      right: 3px;
+      bottom: 3px;
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 9px;
+      line-height: 1;
+    }
+
+    .logo-tiles i { display: none; }
+
+    .site-title-text { gap: 3px; }
+    .site-title-text small {
+      color: #527189;
+      font-size: .73rem;
+      letter-spacing: .08em;
+    }
+    .site-title-text b {
+      color: var(--blue-dark);
+      font-size: 1.42rem;
+      letter-spacing: .02em;
+    }
+
+    .operator {
+      color: #687986;
+      border-left: 1px solid #d6dfe5;
+      padding-left: 24px;
+      font-size: .74rem;
+    }
+
+    .login-link {
+      min-width: 112px;
+      padding: 10px 19px;
+      color: var(--blue);
+      background: #fff;
+      border: 2px solid var(--blue);
+      border-radius: 7px;
+      text-align: center;
+      font-size: .84rem;
+      letter-spacing: .04em;
+    }
+
+    /* 検索：青い一本帯でサイトの顔を明確に */
+    .search-band {
+      background: var(--blue);
+      border: 0;
+      box-shadow: none;
+    }
+
+    .search-inner { padding: 15px 0; }
+    .search-form { grid-template-columns: auto minmax(0, 1fr) 94px; gap: 13px; }
+    .search-form label { color: #fff; font-size: .9rem; letter-spacing: .04em; }
+    .search-form input {
+      min-height: 46px;
+      padding-inline: 15px;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 2px;
+      box-shadow: inset 0 1px 2px rgba(28, 59, 82, .08);
+    }
+    .search-button {
+      min-height: 46px;
+      color: var(--blue-dark);
+      background: #fff;
+      border: 1px solid #fff;
+      border-radius: 2px;
+    }
+
+    /* 本文：白地を広く取り、細い罫線で整理 */
+    main { padding: 32px 0 58px; }
+
+    .intro {
+      margin: 0 auto 29px;
+      padding: 0 0 20px;
+      text-align: center;
+      background: #fff;
+      border: 0;
+      border-bottom: 1px solid var(--line-gray);
+    }
+    .intro::before { display: none; }
+    .intro h2 {
+      margin: 0 0 5px;
+      color: var(--blue-dark);
+      font-size: clamp(1.45rem, 2.7vw, 2.05rem);
+      font-weight: 600;
+      letter-spacing: .025em;
+    }
+    .intro p { color: #536673; font-size: .92rem; }
+
+    .location-bar { margin-bottom: 14px; }
+    .breadcrumb { color: #72808a; font-size: .82rem; }
+    .breadcrumb button { color: var(--blue-dark); font-weight: 600; }
+    .breadcrumb button:hover { background: #f1f6f9; }
+
+    .back-button,
+    .plain-button,
+    .contact-link {
+      color: var(--blue-dark);
+      background: #fff;
+      border: 1px solid var(--blue);
+      border-radius: 2px;
+    }
+
+    .content-panel {
+      background: #fff;
+      border: 1px solid var(--line-gray);
+    }
+
+    .panel-heading {
+      padding: 16px 20px;
+      background: #f3f5f6;
+      border-bottom: 1px solid var(--line-gray);
+      border-left: 5px solid var(--blue);
+    }
+    .panel-heading h2 { color: var(--blue-dark); font-size: 1.2rem; }
+    .panel-heading p { color: #6b7a84; }
+    .panel-body { padding: 24px 20px 26px; }
+
+    .grid { gap: 8px; }
+
+    .library-block + .library-block {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line-gray);
+    }
+
+    .library-block-heading,
+    .library-block:nth-child(2) .library-block-heading {
+      align-items: center;
+      margin-bottom: 13px;
+      padding: 11px 14px;
+      background: #f1f3f4;
+      border: 0;
+      border-left: 4px solid var(--blue);
+    }
+    .library-block-heading h3,
+    .library-block:nth-child(2) .library-block-heading h3 {
+      color: var(--blue-dark);
+      font-size: 1rem;
+    }
+
+    /* 年度・教科タイル：色分けをやめたフラットな青枠 */
+    .tile,
+    .tile.pre,
+    .tile.subject,
+    .tile.section {
+      min-height: 78px;
+      padding: 13px 15px;
+      color: #2b4354;
+      background: #fff;
+      border: 1px solid #2094dc;
+      border-radius: 2px;
+      box-shadow: none;
+    }
+    .tile::after {
+      content: "›";
+      position: absolute;
+      right: 13px;
+      top: 50%;
+      color: var(--blue);
+      font-size: 1.4rem;
+      font-weight: 400;
+      transform: translateY(-52%);
+    }
+    .tile-title { color: var(--blue-dark); font-size: .96rem; }
+    .tile-note { color: #74838d; }
+    .tile:hover,
+    .tile.pre:hover,
+    .tile.subject:hover,
+    .tile.section:hover {
+      color: var(--blue-dark);
+      background: #f4faff;
+      border-color: var(--blue-dark);
+      transform: none;
+      box-shadow: none;
+    }
+    .tile:active { transform: none; box-shadow: none; }
+    .tile.status-wait {
+      background: #fbfaf6;
+      border-color: #c9b77f;
+    }
+    .tile.status-wait::after { color: #a38b4b; }
+    .tile.status-wait:hover { background: #fffaf0; border-color: #9e874a; box-shadow: none; }
+
+    .status-label {
+      color: #786b46;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      font-weight: 500;
+    }
+
+    .notice {
+      background: #fbfaf6;
+      border: 1px solid #d7c99f;
+      border-left: 4px solid #b69a53;
+    }
+
+    /* 設問・検索結果 */
+    .question-row,
+    .result-item {
+      background: #fff;
+      border: 1px solid var(--line-gray);
+      border-left: 4px solid var(--blue);
+    }
+    .question-row:hover { background: #f8fbfd; border-color: #9fc7e3; border-left-color: var(--blue); }
+    .question-number {
+      color: var(--blue-dark);
+      background: var(--blue-pale);
+      border: 1px solid #b9d9ef;
+      border-radius: 2px;
+    }
+    .availability {
+      color: var(--blue-dark);
+      background: var(--blue-pale);
+      border: 1px solid #c5deef;
+    }
+    .availability.waiting { color: #766a47; background: #fbfaf6; border-color: #d7c99f; }
+    .view-button {
+      color: #fff;
+      background: var(--blue);
+      border: 1px solid var(--blue);
+      border-radius: 2px;
+    }
+
+    .video-frame { border: 1px solid #adc6d8; background: #22384b; }
+    .video-facts { border: 1px solid var(--line-gray); border-bottom: 0; }
+    .video-facts dt { color: var(--blue-dark); background: #f2f6f8; }
+    .video-facts div { border-bottom: 1px solid var(--line-gray); }
+    .result-path { color: var(--blue-dark); }
+
+    .login-panel { border: 1px solid var(--line-gray); }
+    .login-form label { color: var(--blue-dark); }
+    .login-form input { border: 1px solid #b9c9d4; border-radius: 2px; }
+
+    /* 下部案内 */
+    .student-info {
+      margin-top: 28px;
+      padding: 19px 21px;
+      background: #f2f7fa;
+      border: 1px solid #cfdde6;
+      border-left: 5px solid var(--blue);
+    }
+    .student-info h2 { color: var(--blue-dark); }
+
+    .student-resource {
+      margin-top: 28px;
+      padding: 22px;
+      border: 1px solid var(--line-gray);
+      border-top: 4px solid #8aa6ba;
+    }
+    .student-resource-head h2 { color: #3c5669; }
+    .student-resource-group,
+    .student-resource-group:nth-child(2) { border: 1px solid var(--line-gray); }
+    .student-resource-group h3,
+    .student-resource-group:nth-child(2) h3 {
+      color: var(--blue-dark);
+      background: #f2f4f5;
+      border-bottom: 1px solid var(--line-gray);
+    }
+    .student-resource-link:hover { background: #f4f9fc; }
+
+    .site-footer {
+      padding: 32px 16px;
+      color: #d9e5ed;
+      background: #315469;
+      border-top: 0;
+    }
+    .site-footer p:first-child { color: #fff; }
+    .site-footer a { color: #fff; }
+
+    /* 旧デザインの跳ねる演出を停止し、情報サイトらしい反応へ */
+    .tile,
+    .search-button,
+    .plain-button,
+    .view-button,
+    .back-button,
+    .login-link,
+    .contact-link,
+    .question-number {
+      transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+    }
+    .site-name:hover .logo-tiles i { animation: none; }
+    .question-row:hover .question-number { transform: none; }
+    .search-button:hover { color: #fff; background: #075b9b; border-color: #fff; transform: none; box-shadow: none; filter: none; }
+    .view-button:not([disabled]):hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: none; box-shadow: none; filter: none; }
+    .plain-button:hover,
+    .back-button:hover,
+    .contact-link:hover { background: var(--blue-pale); transform: none; box-shadow: none; }
+    .login-link:hover { color: #fff; background: var(--blue); transform: none; box-shadow: none; filter: none; }
+    .search-button:active,
+    .view-button:not([disabled]):active,
+    .plain-button:active,
+    .back-button:active,
+    .login-link:active,
+    .contact-link:active { transform: none; margin-top: 0; border-bottom-width: 1px; }
+
+    @media (max-width: 780px) {
+      .header-inner { min-height: 84px; }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner { min-height: 70px; padding: 9px 0; gap: 9px; }
+      .logo-tiles { width: 37px; height: 37px; }
+      .logo-tiles::before { left: 8px; top: 5px; width: 19px; height: 23px; border-top-width: 4px; background-size: 10px 2px, 10px 2px; background-position: 4px 6px, 4px 11px; }
+      .logo-tiles::after { right: 2px; bottom: 2px; width: 15px; height: 15px; font-size: 7px; }
+      .site-title-text { gap: 1px; }
+      .site-title-text small { font-size: .55rem; letter-spacing: .04em; }
+      .site-title-text b { font-size: .91rem; letter-spacing: 0; }
+      .login-link { min-width: auto; padding: 7px 9px; border-width: 1px; border-radius: 4px; }
+      .search-inner { padding: 12px 0; }
+      .search-form { grid-template-columns: minmax(0, 1fr) 70px; gap: 8px; }
+      .search-button { padding-inline: 8px; }
+      main { padding-top: 24px; }
+      .intro { margin-bottom: 22px; padding-bottom: 16px; text-align: left; }
+      .intro h2 { font-size: 1.3rem; }
+      .panel-heading { padding: 13px 13px; }
+      .panel-body { padding: 14px 11px 16px; }
+      .library-block-heading,
+      .library-block:nth-child(2) .library-block-heading { align-items: flex-start; flex-direction: column; gap: 1px; }
+      .tile,
+      .tile.pre,
+      .tile.subject,
+      .tile.section { min-height: 66px; padding: 11px 34px 11px 12px; }
+      .student-info { padding: 16px 15px; }
+      .student-resource { padding: 16px 11px; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">本文へ移動</a>
@@ -774,7 +1192,7 @@
       <h1 class="site-title">
         <a class="site-name" href="#main-content" id="homeLink">
           <span class="logo-tiles" aria-hidden="true"><i>過</i><i>去</i><i>問</i></span>
-          <span class="site-title-text"><small>沖縄県立高校入試</small><b>過去問解説ライブラリ</b></span>
+          <span class="site-title-text"><small>沖縄県立高校入試専門・JUKEN CAMP</small><b>過去問解説ライブラリ</b></span>
         </a>
       </h1>
       <p class="operator">JUKEN CAMP 中3専門個別指導 港川教室</p>
@@ -795,7 +1213,7 @@
 
   <main id="main-content" tabindex="-1">
     <section class="intro" aria-labelledby="intro-title">
-      <h2 class="sr-only" id="intro-title">このサイトについて</h2>
+      <h2 id="intro-title">解説動画を、問題別に探す</h2>
       <p>沖縄県立高校入試の過去問・プレ入試解説を、年度・教科・問題別に探せる塾生向け教材サイトです。</p>
     </section>
 
@@ -814,7 +1232,7 @@
 
     <aside class="student-info" aria-labelledby="student-info-title">
       <h2 id="student-info-title">教材の利用について</h2>
-      <p>このサイトは、港川教室の塾生向け教材です。解説動画の視聴は塾生が対象です。利用については港川教室までお問い合わせください。</p>
+      <p>このサイトは、JUKEN CAMP 港川教室の塾生向け教材です。解説動画の視聴は塾生が対象です。利用については港川教室までお問い合わせください。</p>
       <a class="contact-link" href="https://www.juken-camp.online/minatogawa-class">教室へのお問い合わせ</a>
     </aside>
 
