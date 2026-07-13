@@ -8,7 +8,6 @@
   <link rel="canonical" href="https://juken-kakomon.online/">
   <meta name="theme-color" content="#08a7df">
   <meta name="color-scheme" content="light">
-
   <!-- ファビコン・PWA -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -604,6 +603,36 @@
       font-weight: 700;
     }
 
+    /* ===== 受験生のためのリンク集 ===== */
+    .student-resource {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line-gray);
+      border-top: 5px solid var(--green);
+    }
+    .student-resource-head h2 { margin: 0; color: var(--green-dark); font-size: 1.05rem; }
+    .student-resource-head p { margin: 2px 0 0; color: var(--muted); font-size: .82rem; }
+    .student-resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .student-resource-group { border: 3px solid var(--blue-soft); background: #fff; }
+    .student-resource-group:nth-child(2) { border-color: #cceac8; }
+    .student-resource-group h3 { margin: 0; padding: 8px 11px; color: var(--blue-dark); background: var(--blue-pale); font-size: .82rem; }
+    .student-resource-group:nth-child(2) h3 { color: var(--green-dark); background: var(--green-pale); }
+    .student-resource-link {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 11px;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .student-resource-link + .student-resource-link { border-top: 1px dotted var(--line-gray); }
+    .student-resource-link b { font-size: .8rem; }
+    .student-resource-link small { flex: none; color: var(--muted); font-size: .66rem; text-align: right; }
+    .student-resource-link:hover { background: var(--yellow-pale); }
+
     /* ===== フッター ===== */
     .site-footer {
       padding: 26px 16px;
@@ -616,24 +645,7 @@
     .site-footer p { margin: 3px 0; }
     .site-footer p:first-child { font-weight: 700; color: var(--blue-dark); font-size: .88rem; }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px 12px;
-      margin: 14px auto 10px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      max-width: var(--max);
-    }
-
-    .footer-links a {
-      color: var(--blue-dark);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .footer-links a:hover { background: #fff; }
+    .site-footer a { color: var(--blue-dark); text-underline-offset: 3px; }
 
     .sr-only {
       position: absolute;
@@ -737,6 +749,10 @@
       .question-row .view-button { grid-column: 1 / -1; width: 100%; }
       .result-item { grid-template-columns: 1fr; }
       .result-item .plain-button { width: 100%; }
+      .student-resource { padding: 14px 11px; }
+      .student-resource-grid { grid-template-columns: 1fr; gap: 9px; }
+      .student-resource-link { display: block; padding: 10px; }
+      .student-resource-link small { display: block; margin-top: 2px; text-align: left; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -801,17 +817,34 @@
       <p>このサイトは、港川教室の塾生向け教材です。解説動画の視聴は塾生が対象です。利用については港川教室までお問い合わせください。</p>
       <a class="contact-link" href="https://www.juken-camp.online/minatogawa-class">教室へのお問い合わせ</a>
     </aside>
+
+    <aside class="student-resource" aria-labelledby="student-resource-title">
+      <div class="student-resource-head">
+        <h2 id="student-resource-title">受験生のためのリンク集</h2>
+        <p>入試や勉強で調べたいことがあるときに使ってください。</p>
+      </div>
+      <div class="student-resource-grid">
+        <section class="student-resource-group" aria-labelledby="resource-exam-title">
+          <h3 id="resource-exam-title">入試を調べる</h3>
+          <a class="student-resource-link" href="https://okinawa-nyushi.jp/" target="_blank" rel="noopener"><b>入試全体を調べる</b><small>入試ナビ →</small></a>
+          <a class="student-resource-link" href="https://okinawa-shikumi.jp/" target="_blank" rel="noopener"><b>しくみをやさしく確認する</b><small>しくみサイト →</small></a>
+          <a class="student-resource-link" href="https://okinawa-koukou.jp/" target="_blank" rel="noopener"><b>高校ごとの情報を見る</b><small>学校別データブック →</small></a>
+          <a class="student-resource-link" href="https://okinawa-goukaku.jp/" target="_blank" rel="noopener"><b>合格の目安を調べる</b><small>合格判定 →</small></a>
+        </section>
+        <section class="student-resource-group" aria-labelledby="resource-study-title">
+          <h3 id="resource-study-title">勉強する・質問する</h3>
+          <a class="student-resource-link" href="https://line.me/R/ti/p/@763nnpfj" target="_blank" rel="noopener"><b>AI先生に質問する</b><small>LINE版 →</small></a>
+          <a class="student-resource-link" href="https://snapin-jukencamp.vercel.app/" target="_blank" rel="noopener"><b>勉強中のメモをとる</b><small>SnapIn →</small></a>
+          <a class="student-resource-link" href="https://www.youtube.com/@juken-camp/" target="_blank" rel="noopener"><b>受験ソング・学習動画を見る</b><small>公式YouTube →</small></a>
+          <a class="student-resource-link" href="https://www.juken-game.online/" target="_blank" rel="noopener"><b>クイズやゲームで学ぶ</b><small>JUKEN GAME →</small></a>
+        </section>
+      </div>
+    </aside>
   </main>
 
   <footer class="site-footer">
     <p>沖縄県立高校入試 過去問解説ライブラリ</p>
-    <p>制作・運営：JUKEN CAMP 中3専門個別指導 港川教室</p>
-    <nav class="footer-links" aria-label="関連サイト">
-      <a href="https://www.juken-camp.online/minatogawa-class">JUKEN CAMP 港川教室</a>
-      <a href="https://okinawa-nyushi.jp/">沖縄県立高校入試ナビ</a>
-      <a href="https://okinawa-koukou.jp/">沖縄県立高校入試 学校別データブック</a>
-      <a href="https://okinawa-goukaku.jp/">沖縄県立高校入試 合格判定シミュレーター</a>
-    </nav>
+    <p>制作・運営：<a href="https://www.juken-camp.online/minatogawa-class">JUKEN CAMP 中3専門個別指導 港川教室</a></p>
     <p>&copy; <span id="year"></span> JUKEN CAMP</p>
   </footer>
 
