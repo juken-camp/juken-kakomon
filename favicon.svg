@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">過去問解説ライブラリ</title>
+  <rect width="512" height="512" rx="64" fill="#0878c9"/>
+  <rect x="142" y="92" width="228" height="316" rx="12" fill="#ffffff"/>
+  <rect x="142" y="92" width="228" height="42" rx="12" fill="#d7e9f5"/>
+  <rect x="182" y="174" width="132" height="14" rx="7" fill="#b8d7eb"/>
+  <rect x="182" y="214" width="106" height="14" rx="7" fill="#b8d7eb"/>
+  <rect x="182" y="254" width="122" height="14" rx="7" fill="#b8d7eb"/>
+  <rect x="274" y="280" width="124" height="124" rx="16" fill="#075b9b" stroke="#ffffff" stroke-width="10"/>
+  <path d="M323 314L323 370L369 342Z" fill="#ffffff"/>
+</svg>
