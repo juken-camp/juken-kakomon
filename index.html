@@ -826,6 +826,15 @@
 
     .site-name { gap: 14px; }
 
+    /* PC・スマホで同じPNGを縮小表示するため、アイコン形状は変わらない */
+    .header-logo {
+      display: block;
+      width: 50px;
+      height: 50px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
     .logo-tiles {
       position: relative;
       width: 50px;
@@ -1158,12 +1167,14 @@
 
     @media (max-width: 560px) {
       .header-inner { min-height: 70px; padding: 9px 0; gap: 9px; }
+      .header-logo { width: 37px; height: 37px; }
       .logo-tiles { width: 37px; height: 37px; }
-      .logo-tiles::before { left: 8px; top: 5px; width: 19px; height: 23px; border-top-width: 4px; background-size: 10px 2px, 10px 2px; background-position: 4px 6px, 4px 11px; }
+      /* PC版と同じ比率で縮小。教材マークだけが大きく見えないようにする */
+      .logo-tiles::before { left: 8px; top: 5px; width: 18px; height: 22px; border-width: 1.5px; border-top-width: 4px; background-size: 10px 2px, 10px 2px; background-position: 4px 6px, 4px 11px; }
       .logo-tiles::after { right: 2px; bottom: 2px; width: 15px; height: 15px; font-size: 7px; }
       .site-title-text { gap: 1px; }
       .site-title-text small { font-size: .55rem; letter-spacing: .04em; }
-      .site-title-text b { font-size: .91rem; letter-spacing: 0; }
+      .site-title-text b { font-size: 1.1rem; letter-spacing: 0; }
       .login-link { min-width: auto; padding: 7px 9px; border-width: 1px; border-radius: 4px; }
       .search-inner { padding: 12px 0; }
       .search-form { grid-template-columns: minmax(0, 1fr) 70px; gap: 8px; }
@@ -1191,7 +1202,7 @@
     <div class="header-inner">
       <h1 class="site-title">
         <a class="site-name" href="#main-content" id="homeLink">
-          <span class="logo-tiles" aria-hidden="true"><i>過</i><i>去</i><i>問</i></span>
+          <img class="header-logo" src="/header-logo.png" width="100" height="100" alt="" aria-hidden="true">
           <span class="site-title-text"><small>沖縄県立高校入試専門・JUKEN CAMP</small><b>過去問解説ライブラリ</b></span>
         </a>
       </h1>
